@@ -182,7 +182,7 @@ func (pr prCheck) Check(ctx context.Context) error {
 		return err
 	}
 
-	status, err := pr.githubClient.GetCIStatus(ctx, pr.owner, pr.repo, sha)
+	status, err := pr.githubClient.GetCIStatus(ctx, pr.owner, pr.repo, sha, make([]string, 0))
 	if err != nil {
 		return err
 	}
