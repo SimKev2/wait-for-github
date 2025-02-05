@@ -425,9 +425,8 @@ func (c GHClient) GetCIStatus(ctx context.Context, owner, repoName, ref string, 
 		}
 		if reportFailure {
 			return CIStatusFailed, nil
-		} else {
-			return CIStatusPassed, nil
 		}
+		return CIStatusPassed, nil
 	}
 
 	return CIStatusUnknown, nil
